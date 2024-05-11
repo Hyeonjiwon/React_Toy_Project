@@ -7,13 +7,16 @@ class Store {
     }
 
     /**
-     * user 검색 메소드
+     * 데이터 세트에서 키워드를 사용하여 검색
      * @param {string} keyword 
-     * @returns user 배열 데이터
+     * @param {string} dataSetName 데이터 세트 이름 ('userData' 또는 'countriesData')
+     * @returns 검색 결과 데이터 배열
      */
-    search(keyword) {
-        return this.storage.userData.filter((user) =>
-          user.name.includes(keyword)
+    search(keyword, dataSetName) {
+        return this.storage[dataSetName].filter((item) =>
+            Object.values(item).some((value) => 
+                typeof value === "string" && value.includes(keyword)
+            )
         );
     }
 }
