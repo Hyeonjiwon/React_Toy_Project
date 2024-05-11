@@ -28,17 +28,19 @@ const Table = ({ title, data = [] }) => {
     }
     return (
         <>
-            <div>{title}</div>
-            <table>
-                <thead>
-                    <tr>
-                        {getColumnNames()}
-                    </tr>
-                </thead>
-                <tbody>
-                    {getTableData()}
-                </tbody>
-            </table>
+            <div className="tableContainer">
+                <div>{title}</div>
+                <table>
+                    <thead>
+                        <tr>
+                            {getColumnNames()}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {getTableData()}
+                    </tbody>
+                </table>
+            </div>
         </>
     );
 }

@@ -94,3 +94,7 @@ table {
     color: white;
     text-align: center;
   }
+
+  .tableContainer {
+    margin-bottom: 20px;
+  }
